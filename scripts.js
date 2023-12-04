@@ -1,26 +1,20 @@
-function getDirection(currentLocation, destination) {
-  const stations = [1, 2, 3, 4, 5];
+function getDirection() {
+  const currentStation = document.getElementById('currentStation').value;
+  const destinationStation = document.getElementById('destinationStation').value;
 
-  // Ensure valid input
-  if (!stations.includes(currentLocation) || !stations.includes(destination)) {
-      return "Invalid station number.";
-  }
+ const metroStations = ["marj", "azbt", "ain shams", "matarya", "helmyazaton", "hadayekzaton", "saray", "hamamat", "kobry", "sadr", "demerdash", "ghamra", "shohadaa", "oraby", "naser", "sadat", "zaghloul", "zeinab", "saleh", "margergis", "zahraa", "darelsalam", "hadayekmaadi", "maadi", "thakanat", "torabalad", "kozzika", "turaelesmant", "masaraa", "hadayekhelwan", "wadihof", "helwanuni", "ainhelwan", "helwan"];
 
-  // Calculate distances to last and first stations
-  const distanceToLast = Math.abs(stations.indexOf(currentLocation) - (stations.length - 1));
-  const distanceToFirst = stations.indexOf(currentLocation);
+  const marjDirection = "Helwan";
+  const helwanDirection = "Marj";
 
-  // Compare distances to determine direction
-  if (distanceToLast <= distanceToFirst) {
-      return "Keep moving towards the last station (Station 5).";
+  const currentIndex = metroStations.indexOf(currentStation);
+  const destinationIndex = metroStations.indexOf(destinationStation);
+
+  if (currentIndex < destinationIndex) {
+      document.getElementById('result').textContent = "Take " + marjDirection + " direction.";
+  } else if (currentIndex > destinationIndex) {
+      document.getElementById('result').textContent = "Take " + helwanDirection + " direction.";
   } else {
-      return "Move towards the first station (Station 1).";
+      document.getElementById('result').textContent = "You are already at your destination!";
   }
 }
-
-// Example usage:
-const currentLocation = 2; // Replace with your current station number
-const destination = 4;    // Replace with your destination station number
-
-const direction = getDirection(currentLocation, destination);
-console.log(direction);

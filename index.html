@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Add this to the head section of your HTML -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro Direction Finder</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
 
-    <h1>Metro Direction Finder</h1>
+   
+    <div class="square-background"> 
+      <h1>Metro</h1>
+    </div>
 
-    <form id="directionForm">
-        <label for="currentStation">Current Station:</label>
+    <section class= "form" id="directionForm">
+        <label class="title" for="currentStation">Current Station:</label>
         <select id="currentStation" >
             <option value="marj">Marj</option>
             <option value="azbt">Azbt El-Nakhl</option>
@@ -52,7 +53,7 @@
             <option value="helwan">Helwan</option>
         </select>
 
-        <label for="destinationStation">Destination Station:</label>
+        <label class="title" for="destinationStation">Destination Station:</label>
         <select id="destinationStation" name="destinationStation">
             <option value="marj">Marj</option>
             <option value="azbt">Azbt El-Nakhl</option>
@@ -90,33 +91,13 @@
             <option value="helwan">Helwan</option>
         </select>
 
-        <button type="button" onclick="getDirection()">Get Direction</button>
-    </form>
+        <button id="button" type="button" onclick="getDirection()">Get Direction</button>
+      </section>
 
     <p id="result"></p>
 
-    <script>
-        function getDirection() {
-            const currentStation = document.getElementById('currentStation').value;
-            const destinationStation = document.getElementById('destinationStation').value;
-
-           const metroStations = ["marj", "azbt", "ain shams", "matarya", "helmyazaton", "hadayekzaton", "saray", "hamamat", "kobry", "sadr", "demerdash", "ghamra", "shohadaa", "oraby", "naser", "sadat", "zaghloul", "zeinab", "saleh", "margergis", "zahraa", "darelsalam", "hadayekmaadi", "maadi", "thakanat", "torabalad", "kozzika", "turaelesmant", "masaraa", "hadayekhelwan", "wadihof", "helwanuni", "ainhelwan", "helwan"];
-
-            const marjDirection = "helwan";
-            const helwanDirection = "marj";
-
-            const currentIndex = metroStations.indexOf(currentStation);
-            const destinationIndex = metroStations.indexOf(destinationStation);
-
-            if (currentIndex < destinationIndex) {
-                document.getElementById('result').textContent = "Take the " + marjDirection + " direction.";
-            } else if (currentIndex > destinationIndex) {
-                document.getElementById('result').textContent = "Take the " + helwanDirection + " direction.";
-            } else {
-                document.getElementById('result').textContent = "You are already at your destination!";
-            }
-        }
-    </script>
+   
+    <script src="scripts.js"></script>
 
 </body>
 </html>

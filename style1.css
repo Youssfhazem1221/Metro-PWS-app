@@ -1,0 +1,157 @@
+
+
+
+
+body{
+  margin: 0;
+
+}
+
+
+.square-background {
+  flex-shrink: 0;
+  background: #261B9D;
+  width: 100vw; /* 100% of viewport width */
+  height: 332px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place it behind other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+
+  margin-top:230px; 
+  margin-bottom:0; 
+  text-align: center;
+  color: #FFFBF8;
+  font-family: Libre Bodoni;
+  font-size: 77.57px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+
+}
+button{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+}
+
+
+select {
+  appearance: none;
+  outline: 0;
+  background: rgba(27, 20, 110, 0.09);
+
+  background-image: none;
+  width: 352px;
+  height: 48px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+section {
+
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 352px;
+  height: 48px;
+  flex-shrink: 0;
+
+  text-align: center;
+}
+
+
+.select {
+  width: 352px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: rgba(27, 20, 110, 0.09);
+}
+
+.select {
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+select {
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  
+}
+
+
+select::-ms-expand {
+  display: none;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #34495E;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: #F39C12;
+}
+
+.title {
+  display: block;
+  margin-bottom: 5px; /* Adjust the spacing between label and dropdown */
+  text-align: center;
+}
+
+select {
+  /* Your existing styles */
+  width: 200;
+  height: 48px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 484.552px;
+  height: 77.618px;
+  flex-shrink: 0;
+  background: #261B9D;
+
+}
+
+.button{
+
+  color: #F1FAFF;
+
+  font-family: SchulVokalDotless;
+  font-size: 24.737px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
