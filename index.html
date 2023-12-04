@@ -13,9 +13,10 @@
     <div class="square-background"> 
       <h1>Metro</h1>
     </div>
-
+    <div id="container">
     <section class= "form" id="directionForm">
-        <label class="title" for="currentStation">Current Station:</label>
+    <div class="current"> 
+        <label class="title" for="currentStation">The current Station:</label>
         <select id="currentStation" >
             <option value="marj">Marj</option>
             <option value="azbt">Azbt El-Nakhl</option>
@@ -52,6 +53,8 @@
             <option value="ainhelwan">Ain Helwan</option>
             <option value="helwan">Helwan</option>
         </select>
+    </div> 
+    <div class="distanation"> 
 
         <label class="title" for="destinationStation">Destination Station:</label>
         <select id="destinationStation" name="destinationStation">
@@ -90,12 +93,13 @@
             <option value="ainhelwan">Ain Helwan</option>
             <option value="helwan">Helwan</option>
         </select>
-
+        </div>
         <button id="button" type="button" onclick="getDirection()">Get Direction</button>
       </section>
+   
 
     <p id="result"></p>
-
+  </div>
    
     <script src="scripts.js"></script>
 
