@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add this to the head section of your HTML -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Direction Finder</title>
+</head>
+<body>
+
+    <h1>Metro Direction Finder</h1>
+
+    <form id="directionForm">
+        <label for="currentStation">Current Station:</label>
+        <select id="currentStation" >
+            <option value="marj">Marj</option>
+            <option value="azbt">Azbt El-Nakhl</option>
+            <option value="ain shams">Ain Shams</option>
+            <option value="matarya">Matarya</option>
+            <option value="helmyazaton">Helmyet el-Zayton</option>
+            <option value="hadayekzaton">Hadayek el-Zayton</option>
+            <option value="saray">Saray el-Kobba</option>
+            <option value="hamamat">Hamamat el-Kobba</option>
+            <option value="kobry">Kobry el-Kobba</option>
+            <option value="sadr">Manshyet el-Sadr</option>
+            <option value="demerdash">El=Demerdash</option>
+            <option value="ghamra">Ghamra</option>
+            <option value="shohadaa">El-Shohadaa</option>
+            <option value="oraby">Oraby</option>
+            <option value="naser">Naser</option>
+            <option value="sadat">Sadat</option>
+            <option value="zaghloul">Saad-Zaghloul</option>
+            <option value="zeinab">Sayeda Zeinab</option>
+            <option value="saleh">El-Malek el Saleh</option>
+            <option value="margergis">margergis</option>
+            <option value="zahraa">Zahraa</option>
+            <option value="darelsalam">Dar-Elsalam</option>
+            <option value="hadayekmaadi">Hadayek El-Maadi</option>
+            <option value="maadi">Maadi</option>
+            <option value="thakanat">Thakanat el-Maadi</option>
+            <option value="torabalad">Tora el-Balad</option>
+            <option value="kozzika">Kozzika</option>
+            <option value="turaelesmant">Tura el-Esmant</option>
+            <option value="masaraa">El-Masaraa</option>
+            <option value="hadayekhelwan">Hadayek Helwan</option>
+            <option value="wadihof">Wadi Hof</option>
+            <option value="helwanuni">Helwan University</option>
+            <option value="ainhelwan">Ain Helwan</option>
+            <option value="helwan">Helwan</option>
+        </select>
+
+        <label for="destinationStation">Destination Station:</label>
+        <select id="destinationStation" name="destinationStation">
+            <option value="marj">Marj</option>
+            <option value="azbt">Azbt El-Nakhl</option>
+            <option value="ain shams">Ain Shams</option>
+            <option value="matarya">Matarya</option>
+            <option value="helmyazaton">Helmyet el-Zayton</option>
+            <option value="hadayekzaton">Hadayek el-Zayton</option>
+            <option value="saray">Saray el-Kobba</option>
+            <option value="hamamat">Hamamat el-Kobba</option>
+            <option value="kobry">Kobry el-Kobba</option>
+            <option value="sadr">Manshyet el-Sadr</option>
+            <option value="demerdash">El=Demerdash</option>
+            <option value="ghamra">Ghamra</option>
+            <option value="shohadaa">El-Shohadaa</option>
+            <option value="oraby">Oraby</option>
+            <option value="naser">Naser</option>
+            <option value="sadat">Sadat</option>
+            <option value="zaghloul">Saad-Zaghloul</option>
+            <option value="zeinab">Sayeda Zeinab</option>
+            <option value="saleh">El-Malek el Saleh</option>
+            <option value="margergis">margergis</option>
+            <option value="zahraa">Zahraa</option>
+            <option value="darelsalam">Dar-Elsalam</option>
+            <option value="hadayekmaadi">Hadayek El-Maadi</option>
+            <option value="maadi">Maadi</option>
+            <option value="thakanat">Thakanat el-Maadi</option>
+            <option value="torabalad">Tora el-Balad</option>
+            <option value="kozzika">Kozzika</option>
+            <option value="turaelesmant">Tura el-Esmant</option>
+            <option value="masaraa">El-Masaraa</option>
+            <option value="hadayekhelwan">Hadayek Helwan</option>
+            <option value="wadihof">Wadi Hof</option>
+            <option value="helwanuni">Helwan University</option>
+            <option value="ainhelwan">Ain Helwan</option>
+            <option value="helwan">Helwan</option>
+        </select>
+
+        <button type="button" onclick="getDirection()">Get Direction</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function getDirection() {
+            const currentStation = document.getElementById('currentStation').value;
+            const destinationStation = document.getElementById('destinationStation').value;
+
+           const metroStations = ["marj", "azbt", "ain shams", "matarya", "helmyazaton", "hadayekzaton", "saray", "hamamat", "kobry", "sadr", "demerdash", "ghamra", "shohadaa", "oraby", "naser", "sadat", "zaghloul", "zeinab", "saleh", "margergis", "zahraa", "darelsalam", "hadayekmaadi", "maadi", "thakanat", "torabalad", "kozzika", "turaelesmant", "masaraa", "hadayekhelwan", "wadihof", "helwanuni", "ainhelwan", "helwan"];
+
+            const marjDirection = "helwan";
+            const helwanDirection = "marj";
+
+            const currentIndex = metroStations.indexOf(currentStation);
+            const destinationIndex = metroStations.indexOf(destinationStation);
+
+            if (currentIndex < destinationIndex) {
+                document.getElementById('result').textContent = "Take the " + marjDirection + " direction.";
+            } else if (currentIndex > destinationIndex) {
+                document.getElementById('result').textContent = "Take the " + helwanDirection + " direction.";
+            } else {
+                document.getElementById('result').textContent = "You are already at your destination!";
+            }
+        }
+    </script>
+
+</body>
+</html>
