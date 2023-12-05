@@ -16,8 +16,9 @@
     <div id="container">
     <section class= "form" id="directionForm">
     <div class="current"> 
-        <label class="title" for="currentStation">The current Station:</label>
+        <label  class="title" for="currentStation">The current Station:</label>
         <select id="currentStation" >
+          <optgroup id ="firstLine" label="First Line" style="color:blue; background-color: white; font-size: 18px;">
             <option value="marj">Marj</option>
             <option value="azbt">Azbt El-Nakhl</option>
             <option value="ain shams">Ain Shams</option>
@@ -52,12 +53,60 @@
             <option value="helwanuni">Helwan University</option>
             <option value="ainhelwan">Ain Helwan</option>
             <option value="helwan">Helwan</option>
+          </optgroup>
+          <optgroup label="Second Line" id="secondLine" style="color:red;background-color: white;font-size: 18px;" >
+            <option value="shubra">Shubra</option>
+            <option value="mezalat">El Mezalat</option>
+            <option value="khalafawi">El Khalafawi</option>
+            <option value="sainttrase">Saint Trase </option>
+            <option value="rodelfarag">Rod El Farag</option>
+            <option value="masarrah">Masarrah</option>
+            <option value="shohadaa">Shohadaa</option>
+            <option value="atabba">El Attaba</option>
+            <option value="abdeen">Abdeen</option>
+            <option value="sadat">Sadat</option>
+            <option value="opera">Opera</option>
+            <option value="dokki">Dokki</option>
+            <option value="bohooth">El Bohooth</option>
+            <option value="cairouni">Cairo University</option>
+            <option value="faisal">Faysal</option>
+            <option value="giza">Giza</option>
+            <option value="omelmasr">Om El Masryeen</option>
+            <option value="sakyet">Sakyet Mekky</option>
+            <option value="moneb">Al Moneeb</option>
+
+          </optgroup>
+          <optgroup label="Third Line" d="thirdLine" style="color:green; background-color: white; font-size: 18px;">
+            <option value="adly">Adly Mansour</option>
+            <option value="hayksteb">El Haykestep</option>
+            <option value="omar">Omar Ibn El Khattab</option>
+            <option value="qubaa">Qubaa</option>
+            <option value="heshambarakat">Hesham Barakat</option>
+            <option value="nozha">El Nozha</option>
+            <option value="elshams">El Shams Club</option>
+            <option value="alf">Alf Maskan</option>
+            <option value="heliopolis">Heliopolis</option>
+            <option value="haroun">Haroun</option>
+            <option value="alahram">Al Ahram</option>
+            <option value="kollyet">Kollyet El Banat</option>
+            <option value="stadium">Stadium</option>
+            <option value="fairzone">Fair Zone</option>
+            <option value="abasya">El Abassyia</option>
+            <option value="abdobasha">Abdou Pasha</option>
+            <option value="geish">El Geish</option>
+            <option value="babelsharia">Bab El Shaariya</option>
+            <option value="atabba">Attaba</option>
+            <option value="naser">Naser</option>
+            <option value="masbero">Maspero</option>
+            <option value="safaa">Safaa Hegazy</option>
+            <option value="kitkat">KitKat</option>
         </select>
     </div> 
     <div class="distanation"> 
 
         <label class="title" for="destinationStation">Destination Station:</label>
         <select id="destinationStation" name="destinationStation">
+          <optgroup id= "firstLine" label="First Line" style="color:blue; background-color: white; font-size: 18px;" >
             <option value="marj">Marj</option>
             <option value="azbt">Azbt El-Nakhl</option>
             <option value="ain shams">Ain Shams</option>
@@ -91,14 +140,65 @@
             <option value="wadihof">Wadi Hof</option>
             <option value="helwanuni">Helwan University</option>
             <option value="ainhelwan">Ain Helwan</option>
-            <option value="helwan">Helwan</option>
+            <option value="helwan">Helwan</option> 
+          </optgroup>
+          <optgroup label="Second Line" id="secondLine" style="color:red;background-color: white; font-size: 18px;" >
+            <option value="shubra">Shubra</option>
+            <option value="mezalat">El Mezalat</option>
+            <option value="khalafawi">El Khalafawi</option>
+            <option value="sainttrase">Saint Trase </option>
+            <option value="rodelfarag">Rod El Farag</option>
+            <option value="masarrah">Masarrah</option>
+            <option value="shohadaa">Shohadaa</option>
+            <option value="atabba">El Attaba</option>
+            <option value="abdeen">Abdeen</option>
+            <option value="sadat">Sadat</option>
+            <option value="opera">Opera</option>
+            <option value="dokki">Dokki</option>
+            <option value="bohooth">El Bohooth</option>
+            <option value="cairouni">Cairo University</option>
+            <option value="faisal">Faysal</option>
+            <option value="giza">Giza</option>
+            <option value="omelmasr">Om El Masryeen</option>
+            <option value="sakyet">Sakyet Mekky</option>
+            <option value="moneb">Al Moneeb</option>
+          </optgroup>
+          <optgroup label="Third Line" d="thirdLine" style="color:green; background-color: white; font-size: 18px;">
+            <option value="adly">Adly Mansour</option>
+            <option value="hayksteb">El Haykestep</option>
+            <option value="omar">Omar Ibn El Khattab</option>
+            <option value="qubaa">Qubaa</option>
+            <option value="heshambarakat">Hesham Barakat</option>
+            <option value="nozha">El Nozha</option>
+            <option value="elshams">El Shams Club</option>
+            <option value="alf">Alf Maskan</option>
+            <option value="heliopolis">Heliopolis</option>
+            <option value="haroun">Haroun</option>
+            <option value="alahram">Al Ahram</option>
+            <option value="kollyet">Kollyet El Banat</option>
+            <option value="stadium">Stadium</option>
+            <option value="fairzone">Fair Zone</option>
+            <option value="abasya">El Abassyia</option>
+            <option value="abdobasha">Abdou Pasha</option>
+            <option value="geish">El Geish</option>
+            <option value="babelsharia">Bab El Shaariya</option>
+            <option value="atabba">Attaba</option>
+            <option value="naser">Naser</option>
+            <option value="masbero">Maspero</option>
+            <option value="safaa">Safaa Hegazy</option>
+            <option value="kitkat">KitKat</option>
+
+
+
+          </optgroup>
         </select>
         </div>
         <button id="button" type="button" onclick="getDirection()">Get Direction</button>
       </section>
    
-
+    </div id="result">
     <p id="result"></p>
+    </div>
   </div>
    
     <script src="scripts.js"></script>
