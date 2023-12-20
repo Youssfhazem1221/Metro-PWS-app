@@ -1,6 +1,6 @@
-const line1 =  ["marj", "azbt", "ainshams", "matarya", "helmyazaton", "hadayekzaton", "saray", "hamamat", "kobry", "sadr", "demerdash", "ghamra", "shohadaa", "oraby", "naser", "sadat", "zaghloul", "zeinab", "saleh", "margergis", "zahraa", "darelsalam", "hadayekmaadi", "maadi", "thakanat", "torabalad", "kozzika", "turaelesmant", "masaraa", "hadayekhelwan", "wadihof", "helwanuni", "ainhelwan", "helwan"]);
-const line2 =  ["shubra", "mezalat", "khalafawi", "sainttrase", "rodelfarag", "masarrah", "shohadaa", "atabba", "abdeen", "sadat", "opera", "dokki", "bohooth", "cairouni", "faisal", "giza", "omelmasr", "sakyet", "moneb"]);
-const line3 =  ["adly", "hayksteb", "omar", "qubaa", "heshambarakat", "nozha", "elshams", "alf", "heliopolis", "haroun", "alahram", "kollyet", "stadium", "fairzone", "abasya", "abdobasha", "geish", "babelsharia", "atabba", "naser", "masbero", "safaa", "kitkat"]);
+const line1 =  ["marj", "azbt", "ainshams", "matarya", "helmyazaton", "hadayekzaton", "saray", "hamamat", "kobry", "sadr", "demerdash", "ghamra", "shohadaa", "oraby", "naser", "sadat", "zaghloul", "zeinab", "saleh", "margergis", "zahraa", "darelsalam", "hadayekmaadi", "maadi", "thakanat", "torabalad", "kozzika", "turaelesmant", "masaraa", "hadayekhelwan", "wadihof", "helwanuni", "ainhelwan", "helwan"];
+const line2 =  ["shubra", "mezalat", "khalafawi", "sainttrase", "rodelfarag", "masarrah", "shohadaa", "atabba", "abdeen", "sadat", "opera", "dokki", "bohooth", "cairouni", "faisal", "giza", "omelmasr", "sakyet", "moneb"];
+const line3 =  ["adly", "hayksteb", "omar", "qubaa", "heshambarakat", "nozha", "elshams", "alf", "heliopolis", "haroun", "alahram", "kollyet", "stadium", "fairzone", "abasya", "abdobasha", "geish", "babelsharia", "atabba", "naser", "masbero", "safaa", "kitkat"];
 
 const stations = {
   // Line 1
@@ -662,3 +662,5 @@ then, use the information in that object (transferTo, direction) to figure out w
   };
 
 */
+
+

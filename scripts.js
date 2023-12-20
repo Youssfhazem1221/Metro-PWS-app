@@ -36,10 +36,10 @@
     "wadihof": { station: "wadihof", lines: [1] },
     "helwanuni": { station: "helwanuni", lines: [1] },
     "ainhelwan": { station: "ainhelwan", lines: [1] },
-    "helwan": { direction: "helwanDirection" ,station: "helwan", lines: [1] },
+    "helwan": { direction: "Helwan Direction" ,station: "helwan", lines: [1] },
 
     // Line 2
-    "shubra": { direction: "shubraDirection" ,station: "shubra", lines: [2] },
+    "shubra": { direction: "Shubra Direction" ,station: "shubra", lines: [2] },
     "mezalat": { station: "mezalat", lines: [2] },
     "khalafawi": { station: "khalafawi", lines: [2] },
     "sainttrase": { station: "sainttrase", lines: [2] },
@@ -57,10 +57,10 @@
     "giza": { station: "giza", lines: [2] },
     "omelmasr": { station: "omelmasr", lines: [2] },
     "sakyet": { station: "sakyet", lines: [2] },
-    "moneb": { direction: "monebDirection" , station: "moneb", lines: [2] },
+    "moneb": { direction: "Moneeb Direction" , station: "moneb", lines: [2] },
 
     // Line 3
-    "adly": { adly: "adlyDirection" , station: "adly", lines: [3] },
+    "adly": { adly: "Adly Direction" , station: "adly", lines: [3] },
     "hayksteb": { station: "hayksteb", lines: [3] },
     "omar": { station: "omar", lines: [3] },
     "qubaa": { station: "qubaa", lines: [3] },
@@ -82,7 +82,7 @@
     "naser": { station: "naser", lines: [1, 3], isTransition: true, transferto: "line1" },
     "masbero": { station: "masbero", lines: [3] },
     "safaa": { station: "safaa", lines: [3] },
-    "kitkat": { direction: "kitkatDirection", station: "kitkat", lines: [3] },
+    "kitkat": { direction: "Kitkat Direction", station: "kitkat", lines: [3] },
   };
 
 
@@ -101,6 +101,20 @@ function findNearestTransitionStation(currentLine, destinationLine) {
     }
   }
   return null;
+}
+
+function getDirection(currentStation, destinationStation, line) {
+  const stationsOnLine = Object.keys(stations).filter(key => stations[key].lines.includes(line));
+  const currentIndex = stationsOnLine.indexOf(currentStation);
+  const destinationIndex = stationsOnLine.indexOf(destinationStation);
+
+  if (currentIndex < destinationIndex) {
+    // Direction towards the last station of the line
+    return stations[stationsOnLine[stationsOnLine.length - 1]].direction;
+  } else {
+    // Direction towards the first station of the line
+    return stations[stationsOnLine[0]].direction;
+  }
 }
 
 // Function to show directions in the result paragraph
@@ -124,147 +138,16 @@ function showDirection() {
 
   if (currentStationLine !== destinationStationLine) {
     const transitionStation = findNearestTransitionStation(currentStationLine, destinationStationLine);
-    directionMessage = `Take line ${currentStationLine} from ${currentStation} to ${transitionStation}, then switch to line ${destinationStationLine} to reach ${destinationStation}.`;
+    const directionToTransition = getDirection(currentStation, transitionStation, currentStationLine);
+    const directionFromTransition = getDirection(transitionStation, destinationStation, destinationStationLine);
+    
+    directionMessage = `In line ${currentStationLine} ${directionToTransition} from ${currentStation} to ${transitionStation}, then switch to line ${destinationStationLine} in the direction of ${directionFromTransition} to reach ${destinationStation}.`;
   } else {
-    directionMessage = `Take line ${currentStationLine} directly from ${currentStation} to ${destinationStation}.`;
+    const direction = getDirection(currentStation, destinationStation, currentStationLine);
+    directionMessage = `In line ${currentStationLine} move in the direction of ${direction} from ${currentStation} to ${destinationStation}.`;
   }
 
   resultParagraph.textContent = directionMessage;
 }
+;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function showDirection() { 
-
-  
-  function findTransitionalStations() {
-    const transitionalStations = {};
-
-    for (const stationName in stations) {
-        const station = stations[stationName];
-
-        // Check if the station has more than one line
-        if (station.lines.length > 1 && station.isTransition) {
-            transitionalStations[stationName] = {
-                lines: station.lines,
-                transferto: station.transferto,
-            };
-        }
-    }
-
-    return transitionalStations;
-   
-}
-function findTransitionalStations() {
-    const transitionalStations = {};
-
-    for (const stationName in stations) {
-        const station = stations[stationName];
-
-        // Check if the station has more than one line and is marked as a transition station
-        if (station.lines.length > 1 && station.isTransition) {
-            const transferto = station.transferto;
-            const currentLine = station.lines.find(line => line !== transferto);
-
-            transitionalStations[stationName] = {
-                lines: station.lines,
-                transferto: transferto,
-                directionToTransitionalStation: station.direction,
-                directionFromTransitionalStation: stations[transferto].direction,
-                currentLine: currentLine,
-            };
-        }
-    }
-
-    return transitionalStations;
-}
-console.log(findTransitionalStations()); 
-
-
-  
-    const currentStation = document.getElementById("currentStation").value;
-    const destinationStation = document.getElementById("destinationStation").value;
-  
-    const currentStationObj = stations[currentStation];
-    const destinationStationObj = stations[destinationStation];
-  
-    const line1Stations = Object.keys(stations).filter((station) => stations[station].lines.includes(1));
-    const line2Stations = Object.keys(stations).filter((station) => stations[station].lines.includes(2));
-    const line3Stations = Object.keys(stations).filter((station) => stations[station].lines.includes(3));
-  
-    
-    const currentIndexLine1 = line1Stations.indexOf(currentStation);
-    const destinationIndexLine1 = line1Stations.indexOf(destinationStation);
-  
-    const currentIndexLine2 = line2Stations.indexOf(currentStation);
-    const destinationIndexLine2 = line2Stations.indexOf(destinationStation);
-  
-    const currentIndexLine3 = line3Stations.indexOf(currentStation);
-    const destinationIndextLine3 = line3Stations.indexOf(destinationStation);
-  
-  
-    console.log(`Current Station: ${currentStation}`, `Destination Station: ${destinationStation}`);
-  
-
-   
-   
-    
-        
-        
-       
-}
-
-
-
-
-/*if (currentStationObj.lines.includes(1) && destinationStationObj.lines.includes(1)) {
-        if (currentIndexLine1 < destinationIndexLine1) {
-            console.log(`Go towards${helwanDirection}Direction on the first line`);
-        } else if (currentIndexLine1 > destinationIndexLine1) {
-            console.log(`Go towards${marjDirection}Direction on the first line`);
-        }
-    } else if (currentStationObj.lines.includes(2) && destinationStationObj.lines.includes(2)) {
-        if (currentIndexLine2 < destinationIndexLine2) {
-            console.log(`Go towards${moneebDirection}Direction on the second line`);
-        } else if (currentIndexLine2 > destinationIndexLine2) {
-            console.log(`Go towards${shubraDirection}Direction on the second line`);
-        }
-    } else {
-      */ 
-
-      

@@ -2,7 +2,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   height: 100vh;
   font-size: 20px;
   background: #FFFBF8;
@@ -12,7 +12,7 @@ body {
   flex-shrink: 0;
   background: #261B9D;
   width: 100vw;
-  height: 280px;
+  height: 130px;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,19 +42,24 @@ button#button {
 }
 
 h1 {
-  margin-top: 180px; 
+  margin-top: 65px; 
   margin-bottom: 0; 
   text-align: center;
   color: #FFFBF8;
   font-family: Libre Bodoni;
-  font-size: 77.57px;
+  font-size: 35.57px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
+p {
+  text-align: center;
+
+}
+
 .form {
-  margin-top: 180px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -105,16 +110,23 @@ label.title {
 
 }
 
-#result {
-  font-family: 'Ubuntu';
 
+
+section#directionForm.form {
+  display: flex;
+  margin-top: 42%;
+  
+}
+
+p#result {
+  font-family: 'Ubuntu';
+  display: flex;
   position: fixed;
-  margin-top: 470px; /* Adjust this value based on your design */
+  margin-top: 370px; /* Adjust this value based on your design */
   display: flex;
   justify-content: center;
   align-items: center;
   background: #FFFBF8;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow */
 }
